@@ -1,0 +1,100 @@
+============================================
+class
+============================================
+
+class Foo {
+
+}
+
+---
+
+(program
+  (class_declaration
+    (identifier)
+    (class_body)
+  )
+)
+
+============================================
+class with inheritance
+============================================
+
+class Foo extends Utils.Bar {
+
+}
+
+---
+
+(program
+  (class_declaration
+    (identifier)
+    (class_heritage
+      (fqn (identifier))
+    )
+    (class_body)
+  )
+)
+
+============================================
+class with functions
+============================================
+
+class Foo {
+  function foo() {
+  }
+  function bar() {
+  }
+}
+
+---
+
+(program
+  (class_declaration
+    (identifier)
+    (class_body
+      (function_declaration
+        (identifier)
+        (statement_block)
+      )
+      (function_declaration
+        (identifier)
+        (statement_block)
+      )
+    )
+  )
+)
+
+============================================
+class with functions and comments
+============================================
+
+class Foo {
+  // this is method foo
+  function foo() {
+  }
+
+  // this is method bar
+  function bar() {
+  }
+}
+
+---
+
+(program
+  (class_declaration
+    (identifier)
+    (class_body
+      (comment)
+      (function_declaration
+        (identifier)
+        (statement_block)
+      )
+      (comment)
+      (function_declaration
+        (identifier)
+        (statement_block)
+      )
+    )
+  )
+)
+

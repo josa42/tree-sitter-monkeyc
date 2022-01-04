@@ -1,0 +1,48 @@
+============================================
+function
+============================================
+
+function foo() {
+
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block)))
+
+============================================
+function with types
+============================================
+
+function foo(a as Number, b as Number) as Number {
+
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (parameter
+      (identifier)
+      (as_type
+        (type)
+      )
+    )
+    (parameter
+      (identifier)
+      (as_type
+        (type)
+      )
+    )
+    (as_type
+      (type)
+    )
+    (statement_block)
+  )
+)
+
+

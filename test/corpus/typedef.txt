@@ -1,0 +1,21 @@
+============================================
+typedef
+============================================
+
+typedef Numeric as Number or Float or Long or Double; 
+
+---
+
+(program
+  (type_declaration
+    (identifier)
+    (as_type
+      (type)
+      (type)
+      (type)
+      (type)
+    )
+    (semicolon)
+  )
+)
+

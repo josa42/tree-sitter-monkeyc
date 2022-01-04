@@ -4,7 +4,8 @@
   "description": "Treesitter gramar for garmins Monkey C language",
   "main": "bindings/node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tree-sitter generate && tree-sitter test && tree-sitter parse examples/*.mc --quiet --time",
+    "build": "tree-sitter generate"
   },
   "author": "Josa Gesell <josa@gesell.me>",
   "license": "MIT",
@@ -12,6 +13,18 @@
     "nan": "^2.15.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.1"
-  }
+    "tree-sitter-cli": "^0.20.6"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.mc",
+      "file-types": [
+        "monkeyc",
+        "mc"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ]
 }

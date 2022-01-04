@@ -1,0 +1,165 @@
+============================================
+if
+============================================
+
+function f() {
+  if (true) {
+    // consequence
+  }
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (true))
+          (statement_block (comment))
+        )
+      )
+    )
+  )
+)
+
+
+============================================
+if else
+============================================
+
+function f() {
+  if (true) {
+    // consequence
+  } else {
+    // alternative
+  }
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (true))
+          (statement_block (comment))
+          (statement_block (comment))
+        )
+      )
+    )
+  )
+)
+
+============================================
+if nested
+============================================
+
+function f() {
+  if (true) {
+    // foo
+    if (false) {
+    }
+  }
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (true))
+          (statement_block
+            (comment)
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (false))
+          (statement_block
+          )
+        )
+      )
+          )
+        )
+      )
+    )
+  )
+)
+
+============================================
+if / else if
+============================================
+
+function f() {
+  if (true) {
+  } else if (false) {
+  }
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (true))
+          (statement_block)
+          (if_statement
+            (parenthesized_expression
+              (false))
+            (statement_block)
+          )
+        )
+      )
+    )
+  )
+)
+
+============================================
+if / else if / else
+============================================
+
+function f() {
+  if (true) {
+  } else if (false) {
+  } else {
+  }
+}
+
+---
+
+(program
+  (function_declaration
+    (identifier)
+    (statement_block
+      (statement
+        (if_statement
+          (parenthesized_expression
+            (true)
+          )
+          (statement_block)
+          (if_statement
+            (parenthesized_expression
+              (false))
+            (statement_block)
+            (statement_block)
+          )
+        )
+      )
+    )
+  )
+)
+
+

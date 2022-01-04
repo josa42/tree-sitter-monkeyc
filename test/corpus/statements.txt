@@ -1,0 +1,27 @@
+============================================
+using
+============================================
+
+using Toybox.System;
+
+---
+
+(program
+  (import_statement
+    (fqn (identifier))
+    (semicolon)))
+
+============================================
+using with alias
+============================================
+
+using Toybox.Application as App;
+
+---
+
+(program
+  (import_statement
+    (fqn (identifier))
+    (identifier)
+    (semicolon)))
+
